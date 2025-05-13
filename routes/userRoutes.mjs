@@ -1,6 +1,5 @@
 import express from "express";
 import auth from "../middleware/auth.mjs";
-import User from "../models/userSchema.mjs";
 import userController from "../controllers/userController.mjs";
 
 const router = express.Router();
@@ -19,5 +18,6 @@ router.post("/login", userController.login);
 // @desc: get user data
 // @access: Private
 router.get("/", auth, userController.getData);
+
 
 export default router;

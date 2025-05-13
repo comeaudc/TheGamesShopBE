@@ -25,8 +25,8 @@ Server built to serve data from mongoDB to our frontend.
 - Users
     - post user
     - read user
-    - edit user
-    - delete user
+    - edit user - stretch
+    - delete user - stretch
 
 - Game
     - get all

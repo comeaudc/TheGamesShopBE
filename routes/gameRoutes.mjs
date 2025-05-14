@@ -23,7 +23,6 @@ router.get("/", gameController.readGames);
 // @route: Delete /api/game/:id
 // @desc: Delete Game
 // @access: Admin
-
 router
   .route("/:id", auth, adminAuth)
   .put(gameController.updatedGame)

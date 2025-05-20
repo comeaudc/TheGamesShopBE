@@ -31,7 +31,7 @@ Server built to serve data from mongoDB to our frontend.
 
 - Game
     - get all
-    - get one game by ID - show route
+    - get one game by ID - show route - future
     - admin create
     - admin update
     - admin delete

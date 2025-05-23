@@ -48,3 +48,37 @@ Server built to serve data from mongoDB to our frontend.
  - dotenv
  - logger/morgan
  -cors - for connecting to out front end
+
+ # Cart Routes:
+  1. create a cartRoutes file
+
+-private routes - userId is in req.header from middleware
+  - add item to cart
+    -trycatch
+    -get userID from reqheader
+    - find game  id - parameter or req.body
+    - find user by id
+        - res w/error
+    -find card by id
+        -res w/error
+    - push cart item to array
+    -save cart
+    -respond
+
+  - remove item from cart
+    -trycatch
+    -get userID from reqheader
+    - find game  id - parameter or req.body
+    - find user by id
+        - res w/error
+    -find card by id
+        -res w/error
+    - filter/map array by item id and adjust
+    -save cart
+    -respond
+
+  - get all cart items - show cart
+    -trycatch
+        -get cart by id and ``populate``
+            - err check
+        -respond with cart

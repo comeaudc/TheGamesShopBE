@@ -59,7 +59,7 @@ Server built to serve data from mongoDB to our frontend.
     - find game  id - parameter or req.body
     - find user by id
         - res w/error
-    -find card by id
+    -find cart by id
         -res w/error
     - push cart item to array
     -save cart

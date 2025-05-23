@@ -7,6 +7,7 @@ import connectDB from "./db/conn.mjs";
 import globalErr from "./middleware/globalErr.mjs";
 import userRoutes from './routes/userRoutes.mjs';
 import gameRoutes from './routes/gameRoutes.mjs';
+import cartRoutes from './routes/cartRoutes.mjs';
 
 // Setups
 connectDB();
@@ -22,6 +23,7 @@ app.use(express.json());
 // Routes
 app.use('/api/user', userRoutes);
 app.use('/api/game', gameRoutes);
+app.use('/api/cart', cartRoutes);
 
 // Err Middleware - only run when we have a server error
 app.use(globalErr);

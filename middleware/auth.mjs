@@ -1,7 +1,11 @@
+import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+
+dotenv.config();
+
 export default function (req, res, next) {
   // get token from header
   let token = req.header("token");
-  console.log(req.header);
 
   // check if token exists, if not respond error
   if (!token) {
@@ -9,13 +13,9 @@ export default function (req, res, next) {
   }
 
   try {
-    // check if valid token, else error
-    if (token.length !== 24) {
-      throw Error("Invalid Token");
-    }
+    const decoded = jwt.verify(token, process.env.jwtSecret);
 
-    // set user to req
-    req.user = token;
+    req.user = decoded.user.id;
 
     next(); //go to your route
   } catch (error) {

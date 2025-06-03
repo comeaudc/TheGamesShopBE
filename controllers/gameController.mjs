@@ -27,4 +27,10 @@ let deleteGame = async (req, res) => {
   res.json(deletedGame);
 };
 
-export default { createGame, readGames, updatedGame, deleteGame };
+let getOne = async (req, res) => {
+  let getOne = await Game.findById(req.params.id);
+
+  res.json(getOne);
+};
+
+export default { createGame, readGames, updatedGame, deleteGame, getOne };

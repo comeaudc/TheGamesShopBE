@@ -1,8 +1,6 @@
 import express from "express";
 import auth from "../middleware/auth.mjs";
 import adminAuth from "../middleware/adminAuth.mjs";
-import Game from "../models/gameSchema.mjs";
-import data from "../utilities/seedData.mjs";
 import gameController from "../controllers/gameController.mjs";
 
 const router = express.Router();
@@ -28,6 +26,8 @@ router
   .route("/:id", auth, adminAuth)
   .put(gameController.updatedGame)
   .delete(gameController.deleteGame);
+
+router.get("/:id", gameController.getOne);
 
 // @route: GET /api/game/seed
 // @desc: Seed DB information

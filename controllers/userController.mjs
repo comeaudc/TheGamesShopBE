@@ -116,7 +116,10 @@ let login = async (req, res) => {
 let getData = async (req, res) => {
   let user = await User.findById(req.user)
     .select("-password")
-    .populate({ path: "cart", populate: {path: 'items', populate: 'game'} });
+    .populate({
+      path: "cart",
+      populate: { path: "items", populate: "game" },
+    });
 
   res.json(user);
 };
